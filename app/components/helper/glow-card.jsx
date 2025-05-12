@@ -1,9 +1,17 @@
 "use client"
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const GlowCard = ({ children , identifier}) => {
+const GlowCard = ({ children, identifier }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
@@ -66,7 +74,7 @@ const GlowCard = ({ children , identifier}) => {
     return () => {
       document.body.removeEventListener('pointermove', UPDATE);
     };
-  }, [identifier]);
+  }, [identifier, isMounted]);
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
