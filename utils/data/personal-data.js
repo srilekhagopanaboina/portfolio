@@ -12,7 +12,7 @@ export const personalData = {
   linkedIn: "https://www.linkedin.com/in/srilekha-gopanaboina",
   twitter: "https://twitter.com/srilekha",
   stackOverflow: "https://stackoverflow.com/users/srilekha",
-  leetcode: "https://leetcode.com/srilekha",
+  leetcode: "https://leetcode.com/u/srilekhagopanaboina/",
   devUsername: "srilekha",
   resume: "/resume.pdf",
 };
